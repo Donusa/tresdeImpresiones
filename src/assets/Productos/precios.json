@@ -1,0 +1,78 @@
+[
+  {
+    "Nombre": "Silla Bristol",
+    "Resumen": "La clásica sillita de Mardel.",
+    "Precio": 16500,
+    "Tamanos": [
+      { "Nombre": "11 cm", "Precio": 16500 },
+      { "Nombre": "9 cm", "Precio": 13500 },
+      { "Nombre": "7 cm", "Precio": 9500 }
+    ],
+    "Descripcion": "También conocida como la sillita de Mardel. Un icónico asiento de mimbre, declarado patrimonio histórico y cultural en 2009. En este caso está hecha en plástico mediante impresión 3D, ideal para decorar y darle un poco de “La Feliz” a tu casa o a tu espacio.",
+    "Fotos": [
+      { "Color": "Turquesa", "Archivo": "Silla_Bristol_Turquesa.jpeg", "Hex": "#43cdb8" },
+      { "Color": "Azul", "Archivo": "Silla_Bristol_Azul.jpeg", "Hex": "#225cad" },
+      { "Color": "Roja", "Archivo": "Silla_Bristol_Roja.jpeg", "Hex": "#e71938" },
+      { "Color": "Negra", "Archivo": "Silla_Bristol_Negra.jpeg", "Hex": "#171717" },
+      { "Color": "Crema", "Archivo": "Silla_Bristol_Crema.jpeg", "Hex": "#ead9b6" },
+      { "Color": "Blanca", "Archivo": "Silla_Bristol_Blanca.jpeg", "Hex": "#f4f1ea" },
+      { "Color": "Amarilla", "Archivo": "Silla_Bristol_Amarilla.jpeg", "Hex": "#f4c526" }
+    ]
+  },
+  {
+    "Nombre": "Edificio Demetrio Elíades",
+    "Resumen": "Un recuerdo de la ciudad.",
+    "Precio": 23000,
+    "Descripcion": "Un edificio que transforma una esquina cotidiana en un recuerdo de la ciudad. Inspirado en la clásica arquitectura porteña y coronado con el emblemático cartel. Una miniatura para llevar un pedacito de Mar del Plata a tu espacio.",
+    "Fotos": [
+      { "Archivo": "Edificio Demetrio Elíades.jpeg", "Miniatura": "Edificio_Demetrio_Eliades_miniatura.png" }
+    ]
+  },
+  {
+    "Nombre": "Lobo Marino",
+    "Resumen": "Un clásico de la rambla.",
+    "Precio": 10000,
+    "Descripcion": "Si hay un símbolo que define a Mar del Plata en todo el mundo, es el legendario Lobo de Mar de la Rambla.",
+    "Fotos": [
+      { "Archivo": "Lobo_Marino.jpeg" },
+      { "Archivo": "Lobo_Marino_2.jpeg" }
+    ]
+  },
+  {
+    "Nombre": "Bristol",
+    "Resumen": "Un rincón de Mar del Plata.",
+    "Precio": 10000,
+    "Descripcion": "La rambla, el mar y esos paseos que siempre dan ganas de repetir. Una miniatura inspirada en la postal de la Bristol, con sus edificios y el clásico lobo marino. Hecha mediante impresión 3D para regalar o sumar un rincón de Mar del Plata a tu casa.",
+    "Tamanos": [
+      { "Nombre": "Mini", "Precio": 10000 },
+      { "Nombre": "Grande", "Precio": 20000 }
+    ],
+    "Fotos": [
+      { "Archivo": "Miniatura_Bristol.jpeg" },
+      { "Archivo": "Miniatura_Bristol_2.jpeg" },
+      { "Archivo": "Miniatura_Bristol_3.jpeg" },
+      { "Archivo": "Miniatura_Bristol_4.jpeg" },
+      { "Archivo": "Miniatura_Bristol_5.jpeg" },
+      { "Archivo": "Miniatura_Bristol_6.jpeg" },
+      { "Archivo": "Miniatura_Bristol_7.jpeg" },
+      { "Archivo": "Miniatura_Bristol_8.jpeg" },
+      { "Archivo": "Miniatura_Bristol_9.jpeg" }
+    ]
+  },
+  {
+    "Nombre": "Sombrilla de Playa",
+    "Resumen": "Un poquito de verano en casa.",
+    "Precio": 16000,
+    "Descripcion": "No hay nada más típico que ir a la playa y llenar tus ojos de las coloridas sombrillas de playa. Decora tu espacio con alguna de ellas. Y no te olvides de combinarla con una sillita 🫢",
+    "Tamanos": [
+      { "Nombre": "Chica · 12 cm", "Precio": 16000 },
+      { "Nombre": "Grande · 15 cm", "Precio": 23000 }
+    ],
+    "Fotos": [
+      { "Color": "Verde y roja", "Archivo": "Sombrilla_Verde_Y_Roja.jpeg", "Hex": "#398849", "HexSecundario": "#e71938" },
+      { "Color": "Verde y blanca", "Archivo": "Sombrilla_Verde_Y_Blanca.jpeg", "Hex": "#398849", "HexSecundario": "#f4f1ea" },
+      { "Color": "Roja y amarilla", "Archivo": "Sombrilla_Roja_Y_Amarilla.jpeg", "Hex": "#e71938", "HexSecundario": "#f4c526" },
+      { "Color": "Naranja y amarilla", "Archivo": "Sombrilla_Naranja_Y_Amarilla.jpeg", "Hex": "#ef8525", "HexSecundario": "#f4c526" }
+    ]
+  }
+]

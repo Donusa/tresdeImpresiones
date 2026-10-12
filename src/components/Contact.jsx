@@ -1,8 +1,8 @@
 import React from 'react';
 import { Phone, MapPin, MessageCircle } from 'lucide-react';
+import { contact, whatsappUrl } from '../data/contact';
 
 export default function Contact() {
-  const whatsappLink = "https://wa.me/2234219772";
 
   return (
     <section id="contacto" className="py-16 bg-white">
@@ -30,7 +30,7 @@ export default function Contact() {
                   <Phone className="h-6 w-6 text-primary-600" />
                 </div>
                 <div className="ml-3 text-base text-gray-500">
-                  <p>+54 223 421-9772</p>
+                  <p>{contact.phoneLabel}</p>
                 </div>
               </div>
               <div className="flex items-center">
@@ -45,7 +45,7 @@ export default function Contact() {
 
             <div className="mt-10">
               <a
-                href={whatsappLink}
+                href={whatsappUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full flex items-center justify-center px-8 py-4 border border-transparent text-lg font-medium rounded-md text-white bg-[#25D366] hover:bg-[#128C7E] transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1"

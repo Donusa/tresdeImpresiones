@@ -1,95 +1,8 @@
 import React from 'react';
+import { imageForProduct, products } from '../data/productCatalog';
+import { minimumPriceForProduct, sizesForProduct } from '../data/productOptions';
 
-const projects = [
-  // Modelos - Proceso creativo
-  {
-    id: 1,
-    title: 'Modelo 3D - Concepto',
-    image: '/model1.jpeg',
-    description: 'Diseño y modelado digital de personajes'
-  },
-  {
-    id: 2,
-    title: 'Modelado Orgánico',
-    image: '/model2.jpeg',
-    description: 'Creación de formas complejas y detalladas'
-  },
-  {
-    id: 3,
-    title: 'Esculpido Digital',
-    image: '/model3.jpeg',
-    description: 'Proceso de detallado en alta resolución'
-  },
-  {
-    id: 4,
-    title: 'Diseño de Personajes',
-    image: '/model4.jpeg',
-    description: 'Modelado 3D listo para impresión'
-  },
-  {
-    id: 5,
-    title: 'Preparación para Impresión',
-    image: '/model5.jpeg',
-    description: 'Optimización de malla para manufactura aditiva'
-  },
-  {
-    id: 6,
-    title: 'Renderizado Previo',
-    image: '/model6.jpeg',
-    description: 'Visualización del modelo antes de imprimir'
-  },
-  // Display - Trabajos terminados
-  {
-    id: 7,
-    title: 'Figura Terminada',
-    image: '/display1.jpeg',
-    description: 'Impresión y post-procesado completo'
-  },
-  {
-    id: 8,
-    title: 'Pintado Artesanal',
-    image: '/display2.jpeg',
-    description: 'Acabado a mano con máximo detalle'
-  },
-  {
-    id: 9,
-    title: 'Coleccionable',
-    image: '/display3.jpeg',
-    description: 'Pieza única para exhibición'
-  },
-  {
-    id: 10,
-    title: 'Miniatura Detallada',
-    image: '/display4.jpeg',
-    description: 'Alta resolución en pequeña escala'
-  },
-  {
-    id: 11,
-    title: 'Proyecto Personalizado',
-    image: '/display5.jpeg',
-    description: 'Realización a medida según requerimientos'
-  },
-  {
-    id: 12,
-    title: 'Acabado Profesional',
-    image: '/display6.jpeg',
-    description: 'Técnicas de pintura y texturizado'
-  },
-   {
-    id: 13,
-    title: 'Figura de Acción',
-    image: '/display7.jpeg',
-    description: 'Personaje articulado y pintado'
-  },
-  {
-    id: 14,
-    title: 'Diorama',
-    image: '/display8.jpeg',
-    description: 'Escenografía y ambientación completa'
-  }
-];
-
-export default function ProjectsCarousel() {
+export default function ProjectsCarousel({ onSelectProduct }) {
   return (
     <section id="proyectos" className="py-20 overflow-hidden bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
@@ -102,17 +15,17 @@ export default function ProjectsCarousel() {
       </div>
 
       <div className="relative w-full">
-        <div className="flex w-max animate-scroll hover:[animation-play-state:paused]">
+        <div className="flex w-max animate-scroll hover:[animation-play-state:paused] focus-within:[animation-play-state:paused]">
           {/* Original set */}
           <div className="flex space-x-8 px-4">
-            {projects.map((project) => (
-              <ProjectCard key={`original-${project.id}`} project={project} />
+            {products.map((product) => (
+              <ProjectCard key={`original-${product.Nombre}`} product={product} onSelect={onSelectProduct} />
             ))}
           </div>
           {/* Duplicate set for seamless loop */}
           <div className="flex space-x-8 px-4">
-            {projects.map((project) => (
-              <ProjectCard key={`duplicate-${project.id}`} project={project} />
+            {products.map((product) => (
+              <ProjectCard key={`duplicate-${product.Nombre}`} product={product} onSelect={onSelectProduct} />
             ))}
           </div>
         </div>
@@ -121,20 +34,22 @@ export default function ProjectsCarousel() {
   );
 }
 
-function ProjectCard({ project }) {
+function ProjectCard({ product, onSelect }) {
+  const image = imageForProduct(product.Nombre, { thumbnails: true });
+  const preserveFullImage = product.AjusteImagen === 'contain';
+
   return (
-    <div className="w-80 flex-shrink-0 group relative rounded-lg overflow-hidden shadow-lg bg-white transition-transform hover:-translate-y-1">
-      <div className="aspect-w-16 aspect-h-9 h-64 overflow-hidden">
-        <img
-          src={project.image}
-          alt={project.title}
-          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-        />
+    <button type="button" onClick={() => onSelect(product)} aria-label={`Ver detalle de ${product.Nombre}`} className="w-80 flex-shrink-0 group relative overflow-hidden rounded-lg bg-white text-left shadow-lg transition-transform hover:-translate-y-1 focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-primary-600">
+      <div className="relative h-64 overflow-hidden bg-primary-50">
+        {image ? <>
+          {preserveFullImage && <div className="product-gallery__backdrop" style={{ backgroundImage: `url("${image}")` }} aria-hidden="true" />}
+          <img src={image} alt={product.Nombre} className={`relative h-full w-full object-center ${preserveFullImage ? 'object-contain' : 'object-cover'}`} />
+        </> : <div className="grid h-full place-items-center text-sm font-semibold text-primary-700">Imagen no disponible</div>}
       </div>
       <div className="p-6">
-        <h3 className="text-lg font-bold text-gray-900">{project.title}</h3>
-        <p className="mt-2 text-sm text-gray-600">{project.description}</p>
+        <h3 className="text-lg font-bold text-gray-900">{product.Nombre}</h3>
+        <p className="mt-2 text-xl font-black text-primary-700">{sizesForProduct(product).length > 1 && <span className="text-sm font-medium">Desde </span>}${minimumPriceForProduct(product).toLocaleString('es-AR')}</p>
       </div>
-    </div>
+    </button>
   );
 }

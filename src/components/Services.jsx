@@ -31,7 +31,7 @@ export default function Services() {
         <div className="text-center">
           <h2 className="text-base font-semibold text-primary-600 tracking-wide uppercase">Nuestros Servicios</h2>
           <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-            Soluciones integrales en 3D
+            Diseñamos, imprimimos y pintamos tus ideas
           </p>
           <p className="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
             Servicios artesanales y personalizados con atención al detalle.
