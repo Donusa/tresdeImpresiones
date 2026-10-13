@@ -2,7 +2,7 @@ import React from 'react';
 import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import { whatsappUrl } from '../data/contact';
 
-export default function Hero() {
+export default function Hero({ onOpenProductSearch }) {
   return (
     <section id="inicio" className="home-hero" aria-labelledby="home-hero-title">
       <div className="home-hero__inner">
@@ -15,11 +15,11 @@ export default function Hero() {
             Creamos figuras y piezas únicas a pequeña escala. Desde la impresión hasta el pintado artesanal, cuidamos cada detalle de tu proyecto.
           </p>
           <div className="home-hero__actions">
-            <a className="home-hero__button home-hero__button--primary" href={whatsappUrl()} target="_blank" rel="noopener noreferrer">
-              Cotizar ahora <ArrowRight size={19} aria-hidden="true" />
+            <a className="home-hero__button home-hero__button--primary" href="#comprar" onClick={onOpenProductSearch}>
+              Comprar ahora <ArrowRight size={19} aria-hidden="true" />
             </a>
-            <a className="home-hero__button home-hero__button--secondary" href="#proyectos">
-              Ver proyectos <ArrowUpRight size={19} aria-hidden="true" />
+            <a className="home-hero__button home-hero__button--secondary" href={whatsappUrl()} target="_blank" rel="noopener noreferrer">
+              Cotizar idea <ArrowUpRight size={19} aria-hidden="true" />
             </a>
           </div>
           <div className="home-hero__note">

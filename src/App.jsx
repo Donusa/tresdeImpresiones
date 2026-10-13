@@ -149,7 +149,7 @@ function App() {
       ) : (
         <div key="inicio" className="page-transition page-transition--home pt-28 sm:pt-[6.5rem]">
           <main>
-            <Hero />
+            <Hero onOpenProductSearch={openProductSearch} />
             <Services />
             <ProjectsCarousel onSelectProduct={openProduct} />
             <Contact />
